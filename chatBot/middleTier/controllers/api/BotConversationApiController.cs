@@ -19,7 +19,6 @@ namespace Sabio.Web.Controllers.Api
         // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
         [Route(), HttpPost]
-        //[Authorize]
         public async Task<HttpResponseMessage> InsertMessage(MessageInsertRequest model)
 
         {
@@ -27,10 +26,6 @@ namespace Sabio.Web.Controllers.Api
             {
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
             }
-
-            //int messageId = BotConversationService.InsertMessage(model);
-
-            //ItemResponse<int> response = new ItemResponse<int> { Item = messageId };
 
             bool result = await BotConversationService.GetBotResponse(model);
 
@@ -45,7 +40,6 @@ namespace Sabio.Web.Controllers.Api
         // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
         [Route("{UserId}"), HttpGet]
-        //[Authorize]
         public HttpResponseMessage GetMessageByUserId([FromUri]MessageInsertRequest model)
         {
             if (!ModelState.IsValid)
