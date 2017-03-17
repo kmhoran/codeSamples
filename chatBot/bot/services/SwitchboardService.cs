@@ -35,12 +35,8 @@ namespace QuoteMuleBot1
                         break;
 
                     case "DirectAddress":
-                        //response = "If you don't mind, I'd rather stick to business right now. Do you have any questions about Quote Mule?";
+                        
                         response = await DirectAddressHandler(inputStr);
-                        break;
-
-                    case "Compare":
-                        //response = //await FAQCompareProcessor(faqLuis.topScoringIntent);
                         break;
 
                     case "Farewell":
@@ -56,8 +52,6 @@ namespace QuoteMuleBot1
                         response = ResponseSet.GetRandomResponse(ResponseSet.Nones);
                         break;
                 }
-
-                //response = faqLuis.topScoringIntent.intent;
             }
             return response;
         }
