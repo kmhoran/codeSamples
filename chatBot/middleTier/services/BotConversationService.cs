@@ -26,7 +26,7 @@ namespace Sabio.Web.Services
         protected static string _botCompanyName = "QuoteMule";
 
         //- Authentication key for messaging the QM chatbot.
-        private static string _botAuthKey = "xK0Wonfi7f8.cwA.sTo.KMYp48YtjscDw9m_ndrC-7RAJUphLLLb44OgkwvcJAo";
+        private static string _botAuthKey = "AuthKey";
 
         private static string _apiConversationId = "";
 
