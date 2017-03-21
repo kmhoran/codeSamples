@@ -28,7 +28,7 @@ namespace QuoteMuleBot1.Models
 
 
         // STATIC RESPONSE PHRASES
-        // These SHOULD be stored in some kinda DB, but givin the transitional nature of this bot, I figure, why bother...
+        // These should be stored in a DB.
         // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
