@@ -1,0 +1,54 @@
+﻿<!-- Controller as AdrEMC -->
+<!--<script type="text/ng-template" id="editAddressModal.html">-->
+    <!-- Modal Edit Form -->
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="AdrEMC.cancel()"><span aria-hidden="true">&times;</span></button>
+        <h1 class="modal-title">{{AdrEMC.modalTilte}}</h1>
+    </div>
+    <div class="modal-body">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <h3>Details</h3>
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <div class="col-md-12 form-group">
+                            <label class="col-md-4 control-label text-left">Select Address Type</label>
+                            <div class="col-md-8">
+                                <select class="form-control cursor-pointer" id="address_modal_property-type"
+                                        ng-model="AdrEMC.selected" ng-options="type as type.name for type in AdrEMC.propertyTypes">
+                                    <!--<option nr-repeat="type in AdrECM.propertyTypes" value=1>Primary</option>-->
+                                </select>
+
+                            </div>
+                        </div>
+                        <label class="col-md-2 control-label">Street</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" id="address_modal_address1" ng-model="AdrEMC.modalItems.address1" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">City</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" id="address_modal_city" ng-model="AdrEMC.modalItems.city" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">State</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" id="address_modal_state" ng-model="AdrEMC.modalItems.state" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Zip Code</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" id="address_modal_zipCode" ng-model="AdrEMC.modalItems.zipCode" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="AdrEMC.cancel()">Cancel</button>
+        <button type="button" class="btn btn-primary" id="submit_modal_button" data-dismiss="modal" ng-disabled="AdrEMC.selected.value <= 0" ng-click="AdrEMC.ok()">Submit</button>
+    </div>

@@ -1,0 +1,33 @@
+﻿<div class="address-group" ng-cloak>
+	<div>
+		<h4 class="panel-title-other"><strong>Warehouses</strong></h4>
+	</div>
+	<div ng-show="WAB.warehouseExists">
+
+		<div class="list-group-item row" ng-repeat="address in WAB.addressbook.warehouse">
+
+			<div class="col-md-2 control-buttons lean-top-sm">
+				<button type="button" class="btn btn-primary xs-margin hover-shadow" ng-click="WAB.openEditModal(address)"><span class="fa fa-pencil"></span></button>
+				<button type="button" class="btn btn-danger xs-margin hover-shadow" ng-click="WAB.openDeleteAddress(address)"><span class="fa fa-trash-o"></span></button>
+			</div>
+			<div class="col-md-10 addresses hover-shadow hover-white xs-padding" ng-click="WAB.plotAddressOnMap(address)">
+				<h4><strong>{{address.address1}}</strong></h4>
+				<h4> {{address.city}}, {{address.state}} {{address.zipCode}}</h4>
+			</div>
+
+		</div>
+
+	</div>
+</div>
+
+<div ng-show="WAB.addressbook != null && !WAB.warehouseExists">
+	<hr />
+	<p class="sm-margin">
+		You don't have any warehouses listed. Click <span class="cursor-pointer" ng-click="WAB.openAddAddressModal({addressType:3})"><strong>here</strong></span> to add one.
+	</p>
+</div>
+
+
+
+
+

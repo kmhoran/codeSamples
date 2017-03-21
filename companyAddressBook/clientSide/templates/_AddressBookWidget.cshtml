@@ -1,0 +1,33 @@
+﻿
+<!-- AddressBookWidget -->
+<div class="panel-scroll" ng-controller="addressbookController as AB">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="panel-title-box">
+                <h3>Addresses</h3>
+
+            </div>
+            <ul class="panel-controls" style="margin-top: 2px;">
+
+                @if(Model._Admin)
+                {
+                <li>
+                    <a class="rounded hover-shadow" id="edit_icon" ng-click="AB.openAddAddressModal({addressType:0})">
+                        <span class="fa fa-plus"></span>
+                    </a>
+                </li>
+                }
+
+            </ul>
+        </div>
+        <div class="page-tabs narrow" ng-cloak>
+            <a ng-repeat="tab in AB.tabs" class="{{tab.class}}" href="{{tab.link}}" ng-click="AB.setActiveTab(tab)">{{tab.title}}</a>
+        </div>
+
+        <div class="panel-body list-group list-group-contacts scroll">
+            <div ng-view></div>
+
+        </div>
+
+    </div>
+</div>

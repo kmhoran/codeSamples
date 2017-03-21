@@ -1,0 +1,25 @@
+﻿<!-- 'addressbookController as AB' -->
+<div class="address-group" ng-cloak>
+    <div>
+        <h4 class="panel-title-other"><strong>Primary</strong></h4>
+    </div>
+    <div ng-show="AB.primaryExists">
+        <div class="list-group-item row" ng-repeat="address in AB.addressbook.primary">
+            <div class="col-md-2 control-buttons lean-top-sm">
+                <button type="button" class="btn btn-primary xs-margin hover-shadow" ng-click="AB.openEditModal(address)"><span class="fa fa-pencil"></span></button>
+                <button type="button" class="btn btn-danger xs-margin hover-shadow" ng-click="AB.openDeleteAddress(address)"><span class="fa fa-trash-o"></span></button>
+            </div>
+            <div class="col-md-10 addresses hover-shadow hover-white xs-padding" ng-click="AB.plotAddressOnMap(address)">
+                <h4><strong>{{address.address1}}</strong></h4>
+                <h4> {{address.city}}, {{address.state}} {{address.zipCode}}</h4>
+            </div>
+            
+        </div>
+    </div>
+    <div ng-show="AB.addressbook != null && !AB.primaryExists">
+        <hr/>
+        <p class="sm-margin">
+            You don't have a primary address listed. Click <span class="cursor-pointer" ng-click="AB.openAddAddressModal({addressType:1})"><strong>here</strong></span> to add one.
+        </p>
+    </div>
+</div>

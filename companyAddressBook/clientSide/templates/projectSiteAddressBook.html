@@ -1,0 +1,26 @@
+﻿<div class="address-group" ng-cloak>
+    <div>
+        <h4 class="panel-title-other"><strong>Project Sites</strong></h4>
+    </div>
+    <div ng-show="PAB.projectSiteExists">
+
+        <div class="list-group-item row" ng-repeat="address in PAB.addressbook.projectSite">
+
+            <div class="col-md-2 control-buttons lean-top-sm">
+                <button type="button" class="btn btn-primary xs-margin hover-shadow" ng-click="PAB.openEditModal(address)"><span class="fa fa-pencil"></span></button>
+                <button type="button" class="btn btn-danger xs-margin hover-shadow" ng-click="PAB.openDeleteAddress(address)"><span class="fa fa-trash-o"></span></button>
+            </div>
+            <div class="col-md-10 addresses hover-shadow hover-white xs-padding" ng-click="PAB.plotAddressOnMap(address)">
+                <h4><strong>{{address.address1}}</strong></h4>
+                <h4> {{address.city}}, {{address.state}} {{address.zipCode}}</h4>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div ng-show="PAB.addressbook != null && !PAB.projectSiteExists">
+        <hr />
+        <p class="sm-margin">
+            You don't have any project sites listed. Click <span class="cursor-pointer" ng-click="PAB.openAddAddressModal({addressType:4})"><strong>here</strong></span> to add one.
+        </p>
+    </div>

@@ -1,0 +1,21 @@
+﻿
+
+    <!-- Modal Edit Form -->
+    <div class="modal-header danger">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="AdrDMC.cancel()"><span aria-hidden="true">&times;</span></button>
+        <h1 class="modal-title">Delete Address</h1>
+    </div>
+    <div class="modal-body">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <h4>Are you sure you want to permanently delete the following address:</h4>
+                <hr />
+                <h5>{{AdrDMC.items.address1}}</h5>
+                <p>{{AdrDMC.items.city}}, {{AdrDMC.items.state}} {{AdrDMC.items.zipCode}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="AdrDMC.cancel()">Cancel</button>
+        <button type="button" class="btn btn-danger" id="submit_modal_button" data-dismiss="modal" ng-click="AdrDMC.ok()">Delete</button>
+    </div>
