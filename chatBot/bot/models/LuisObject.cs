@@ -6,6 +6,7 @@ using System.Web;
 namespace QuoteMuleBot1.Models
 {
 
+    // Constructed from JSON received from Microsoft's LUIS API
     public class LuisObject
     {
         public string query { get; set; }
